@@ -529,6 +529,33 @@ export default function Home() {
         </div>
       </section>
 
+      {/* YouTube Video Section */}
+      <section className="py-20 lg:py-32">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              XR Projectorのデモビデオ
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              実際の現場でどのように動作するかをご覧ください
+            </p>
+          </AnimatedSection>
+          <AnimatedSection>
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gray-900">
+              <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full"
+                  src="https://www.youtube.com/embed/k3x6cFLr0T8"
+                  title="XR Projector Demo"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
       {/* Testimonials Section */}
       <section className="py-20 lg:py-32 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
