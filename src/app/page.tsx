@@ -300,7 +300,7 @@ export default function Home() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img 
-            src="/images/hero-bg.png" 
+            src="/images/hero-bg.webp" 
             alt="Construction site with XR Projector" 
             className="w-full h-full object-cover"
           />
@@ -504,7 +504,7 @@ export default function Home() {
                   <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
                     <div className="aspect-square rounded-2xl overflow-hidden shadow-xl">
                       <img 
-                        src={value.image} 
+                        src={index === 0 ? '/images/floor-layout.png' : index === 1 ? '/images/track-install.png' : '/images/product-xr-projector.png'} 
                         alt={value.title}
                         className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                       />
