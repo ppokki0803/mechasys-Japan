@@ -42,18 +42,6 @@ const features = [
   },
 ]
 
-// Specifications data
-const specifications = [
-  { label: '投影方式', value: 'レーザー投影 + LED補助' },
-  { label: '投影精度', value: '±2mm @ 10m' },
-  { label: '投影範囲', value: '最大360°' },
-  { label: 'バッテリー駆動時間', value: '約8時間' },
-  { label: '重量', value: '約15kg（フルセット）' },
-  { label: '対応ファイル形式', value: 'DWG, DXF, IFC, RVT' },
-  { label: '3Dスキャン', value: 'LiDAR搭載' },
-  { label: '通信', value: 'Wi-Fi 6, Bluetooth 5.0' },
-]
-
 // Use cases data
 const useCases = [
   {
@@ -71,18 +59,6 @@ const useCases = [
     description: '施工後のスキャンデータと設計図の比較をリアルタイムで実施。手戻りを最小限に抑えます。',
     image: '/images/product-xr-projector.png',
   },
-]
-
-// Package contents
-const packageContents = [
-  'XR Projector 本体',
-  '専用三脚',
-  'コントロールタブレット',
-  '充電ユニット',
-  '輸送用ケース',
-  'セットアップガイド',
-  'オンライントレーニングプログラム',
-  '1年間保証',
 ]
 
 // Animation variants
@@ -293,46 +269,6 @@ export default function ProductPage() {
                 </div>
               </AnimatedSection>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Specifications Section */}
-      <section className="py-20 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
-            <AnimatedSection>
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-                仕様
-              </h2>
-              <p className="text-lg text-gray-600 mb-8">
-                XR Projectorは、建設現場の厳しい環境でも安定した性能を発揮するよう設計されています。
-              </p>
-              <div className="space-y-4">
-                {specifications.map((spec) => (
-                  <div key={spec.label} className="flex justify-between items-center py-3 border-b border-gray-200">
-                    <span className="font-medium text-gray-900">{spec.label}</span>
-                    <span className="text-gray-600">{spec.value}</span>
-                  </div>
-                ))}
-              </div>
-            </AnimatedSection>
-            <AnimatedSection>
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-                パッケージ内容
-              </h2>
-              <p className="text-lg text-gray-600 mb-8">
-                すぐに現場で使用できる完全なキットをご提供します。
-              </p>
-              <div className="grid sm:grid-cols-2 gap-4">
-                {packageContents.map((item) => (
-                  <div key={item} className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
-                    <CheckCircle className="h-5 w-5 text-[#0047bb] flex-shrink-0" />
-                    <span className="text-gray-700">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </AnimatedSection>
           </div>
         </div>
       </section>

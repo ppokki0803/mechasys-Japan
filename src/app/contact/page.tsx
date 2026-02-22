@@ -100,12 +100,12 @@ export default function ContactPage() {
             </Link>
             <div className="hidden lg:flex items-center gap-8">
               <Link
-                href="/product"
+                href="/"
                 className={`text-sm font-medium transition-colors ${
                   isScrolled ? 'text-gray-700 hover:text-[#0047bb]' : 'text-white/90 hover:text-white'
                 }`}
               >
-                製品
+                ホーム
               </Link>
               <a
                 href="/contact"
