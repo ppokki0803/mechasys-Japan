@@ -34,7 +34,10 @@ import {
 
 // Navigation data
 const navItems = [
-  { label: '製品', href: '/product' },
+  { label: '製品紹介', href: '/product' },
+  { label: '業界', href: '#industries' },
+  { label: '会社案内', href: '#company' },
+  { label: 'お問い合わせ', href: '/contact' },
 ]
 
 // Partner logos
@@ -226,14 +229,6 @@ export default function Home() {
                   {item.label}
                 </Link>
               ))}
-              <Link
-                href="/contact"
-                className={`text-sm font-medium transition-colors ${
-                  isScrolled ? 'text-gray-700 hover:text-[#0047bb]' : 'text-white/90 hover:text-white'
-                }`}
-              >
-                お問い合わせ
-              </Link>
             </div>
 
             {/* Desktop CTA */}
@@ -273,20 +268,6 @@ export default function Home() {
                   {item.label}
                 </Link>
               ))}
-              <Link 
-                href="/contact" 
-                className="block text-gray-700 hover:text-[#0047bb] font-medium"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                お問い合わせ
-              </Link>
-              <div className="pt-4 border-t">
-                <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
-                  <Button size="sm" className="w-full bg-[#0047bb] hover:bg-[#003399] rounded-full">
-                    お問い合わせ
-                  </Button>
-                </Link>
-              </div>
             </div>
           </div>
         )}
