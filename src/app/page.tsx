@@ -81,18 +81,21 @@ const coreValues = [
     title: 'シンプルさ',
     subtitle: '日常業務をより簡単に',
     description: 'XR Projectorは現場のレイアウト作業を大幅に簡素化し、人材管理を容易にします。わずか3時間のトレーニングで完全に操作できるようになり、オンラインプログラムで他のスタッフもトレーニング可能です。',
+    image: '/images/value-simplicity.png',
   },
   {
     icon: Settings,
     title: '汎用性',
     subtitle: 'あらゆる作業に対応',
     description: '複数の表面に投影でき、機器を簡単に持ち運べるため、XR Projectorはあらゆるタイプの作業に対応する汎用的なツールです。',
+    image: '/images/value-versatility.png',
   },
   {
     icon: Trophy,
     title: '卓越性',
     subtitle: '自信を持って建設',
     description: '最も精密なツールを使用することで、作業員は完全な自信を持って建設できます。すべての材料が正確に配置され、他の業者との競合を簡単に検出できます。',
+    image: '/images/value-excellence.png',
   },
 ]
 
@@ -293,12 +296,15 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0047bb] to-[#003399]">
-        {/* Background pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-full h-full" style={{
-            backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.4"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")'
-          }} />
+      <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img 
+            src="/images/hero-bg.png" 
+            alt="Construction site with XR Projector" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0047bb]/90 to-[#0047bb]/70" />
         </div>
 
         {/* Hero Content */}
@@ -404,13 +410,15 @@ export default function Home() {
               </Button>
             </AnimatedSection>
             <AnimatedSection className="relative">
-              <div className="relative aspect-video rounded-2xl overflow-hidden bg-gradient-to-br from-[#0047bb]/20 to-[#0047bb]/5">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-20 h-20 mx-auto bg-[#0047bb] rounded-full flex items-center justify-center mb-4 cursor-pointer hover:bg-[#003399] transition-colors">
-                      <Play className="h-8 w-8 text-white ml-1" />
-                    </div>
-                    <p className="text-[#0047bb] font-medium">ビデオを見る</p>
+              <div className="relative aspect-video rounded-2xl overflow-hidden bg-white shadow-2xl">
+                <img 
+                  src="/images/product-xr-projector.png" 
+                  alt="XR Projector" 
+                  className="w-full h-full object-contain p-8"
+                />
+                <div className="absolute inset-0 flex items-center justify-center bg-black/0 hover:bg-black/20 transition-colors cursor-pointer group">
+                  <div className="w-16 h-16 bg-[#0047bb] rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <Play className="h-6 w-6 text-white ml-1" />
                   </div>
                 </div>
               </div>
@@ -494,8 +502,12 @@ export default function Home() {
                     </p>
                   </div>
                   <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
-                    <div className="aspect-square rounded-2xl bg-gradient-to-br from-[#0047bb]/10 to-[#0047bb]/5 flex items-center justify-center">
-                      <value.icon className="h-24 w-24 text-[#0047bb]/30" />
+                    <div className="aspect-square rounded-2xl overflow-hidden shadow-xl">
+                      <img 
+                        src={value.image} 
+                        alt={value.title}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                      />
                     </div>
                   </div>
                 </div>
