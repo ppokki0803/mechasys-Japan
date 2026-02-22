@@ -256,7 +256,7 @@ export default function IndustriesPage() {
             >
               <div className="h-48 overflow-hidden">
                 <img 
-                  src="/images/floor-layout.png" 
+                  src="/images/case-study-1.webp" 
                   alt="Case Study 1"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
@@ -282,7 +282,7 @@ export default function IndustriesPage() {
             >
               <div className="h-48 overflow-hidden">
                 <img 
-                  src="/images/track-install.png" 
+                  src="/images/case-study-2.webp" 
                   alt="Case Study 2"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
