@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { motion, useScroll, useTransform, useInView } from 'framer-motion'
+import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import {
@@ -33,11 +34,7 @@ import {
 
 // Navigation data
 const navItems = [
-  { label: '製品', href: '#product' },
-  { label: '導入業界', href: '#industries' },
-  { label: '会社概要', href: '#company' },
-  { label: '価格', href: '#pricing' },
-  { label: 'ブログ', href: '#blog' },
+  { label: '製品', href: '/product' },
 ]
 
 // Partner logos
@@ -126,20 +123,16 @@ const testimonials = [
 // Footer links
 const footerLinks = {
   company: [
-    { label: 'ホーム', href: '#' },
-    { label: '製品', href: '#product' },
-    { label: '導入業界', href: '#industries' },
-    { label: '会社概要', href: '#company' },
+    { label: 'ホーム', href: '/' },
+    { label: '製品', href: '/product' },
   ],
   resources: [
-    { label: '価格', href: '#pricing' },
-    { label: '導入事例', href: '#cases' },
-    { label: 'ブログ', href: '#blog' },
+    { label: 'お問い合わせ', href: '/contact' },
+    { label: '導入事例', href: '#testimonials' },
   ],
   legal: [
     { label: 'プライバシーポリシー', href: '#' },
     { label: 'EULA', href: '#' },
-    { label: 'Cookieポリシー', href: '#' },
     { label: '利用規約', href: '#' },
   ],
 }
@@ -212,18 +205,18 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
-            <a href="#" className="flex items-center gap-2">
+            <Link href="/" className="flex items-center gap-2">
               <img 
                 src="/images/logo-mechasys.png" 
                 alt="Mechasys" 
                 className={`h-8 w-auto transition-all ${isScrolled ? '' : 'brightness-0 invert'}`}
               />
-            </a>
+            </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-8">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.label}
                   href={item.href}
                   className={`text-sm font-medium transition-colors ${
@@ -231,23 +224,25 @@ export default function Home() {
                   }`}
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
-            </div>
-
-            {/* Desktop CTA */}
-            <div className="hidden lg:flex items-center gap-4">
-              <a
-                href="#login"
+              <Link
+                href="/contact"
                 className={`text-sm font-medium transition-colors ${
                   isScrolled ? 'text-gray-700 hover:text-[#0047bb]' : 'text-white/90 hover:text-white'
                 }`}
               >
-                ログイン
-              </a>
-              <Button size="sm" className="bg-[#0047bb] hover:bg-[#003399] rounded-full">
                 お問い合わせ
-              </Button>
+              </Link>
+            </div>
+
+            {/* Desktop CTA */}
+            <div className="hidden lg:flex items-center gap-4">
+              <Link href="/contact">
+                <Button size="sm" className="bg-[#0047bb] hover:bg-[#003399] rounded-full">
+                  お問い合わせ
+                </Button>
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
@@ -269,22 +264,28 @@ export default function Home() {
           <div className="lg:hidden bg-white border-t">
             <div className="px-4 py-4 space-y-3">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.label}
                   href={item.href}
                   className="block text-gray-700 hover:text-[#0047bb] font-medium"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
-              <div className="pt-4 border-t space-y-3">
-                <a href="#login" className="block text-gray-700 hover:text-[#0047bb] font-medium">
-                  ログイン
-                </a>
-                <Button size="sm" className="w-full bg-[#0047bb] hover:bg-[#003399] rounded-full">
-                  お問い合わせ
-                </Button>
+              <Link 
+                href="/contact" 
+                className="block text-gray-700 hover:text-[#0047bb] font-medium"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                お問い合わせ
+              </Link>
+              <div className="pt-4 border-t">
+                <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Button size="sm" className="w-full bg-[#0047bb] hover:bg-[#003399] rounded-full">
+                    お問い合わせ
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -335,17 +336,19 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <Button size="lg" className="bg-white text-[#0047bb] hover:bg-gray-100 rounded-full px-8 py-6 text-lg">
-              お問い合わせ
-              <ChevronRight className="ml-2 h-5 w-5" />
-            </Button>
-            <a
-              href="#product"
+            <Link href="/contact">
+              <Button size="lg" className="bg-white text-[#0047bb] hover:bg-gray-100 rounded-full px-8 py-6 text-lg">
+                お問い合わせ
+                <ChevronRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+            <Link
+              href="/product"
               className="flex items-center gap-2 text-white hover:text-white/80 transition-colors group"
             >
               <Play className="h-5 w-5" />
               <span className="font-medium">製品について詳しく見る</span>
-            </a>
+            </Link>
           </motion.div>
         </motion.div>
 
@@ -412,10 +415,12 @@ export default function Home() {
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                 XR Projectorは、一貫した精度を保証し、視覚的なワークフローでレイアウト作業の効率を向上させます。床、天井、壁のどの場所でも、その先進的なポジショニング技術により、あらゆる現場に対応する最高クラスの視覚投影を提供します。
               </p>
-              <Button size="lg" className="bg-[#0047bb] hover:bg-[#003399] rounded-full">
-                製品について詳しく見る
-                <ChevronRight className="ml-2 h-5 w-5" />
-              </Button>
+              <Link href="/product">
+                <Button size="lg" className="bg-[#0047bb] hover:bg-[#003399] rounded-full">
+                  製品について詳しく見る
+                  <ChevronRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
             </AnimatedSection>
             <AnimatedSection className="relative">
               <div className="relative rounded-2xl overflow-hidden bg-white shadow-2xl">
@@ -623,14 +628,16 @@ export default function Home() {
             <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
               XR Projectorが次の建設プロジェクトの品質、シンプルさ、効率をどのように向上できるかをご確認ください。
             </p>
-            <Button
-              size="lg"
-              variant="outline"
-              className="rounded-full px-8 py-6 text-lg border-white text-white hover:bg-white hover:text-[#0047bb]"
-            >
-              詳細を見る
-              <ChevronRight className="ml-2 h-5 w-5" />
-            </Button>
+            <Link href="/contact">
+              <Button
+                size="lg"
+                variant="outline"
+                className="rounded-full px-8 py-6 text-lg border-white text-white hover:bg-white hover:text-[#0047bb]"
+              >
+                お問い合わせ
+                <ChevronRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
           </AnimatedSection>
         </div>
       </section>
@@ -680,9 +687,9 @@ export default function Home() {
               <ul className="space-y-3">
                 {footerLinks.company.map((link) => (
                   <li key={link.label}>
-                    <a href={link.href} className="text-gray-400 hover:text-white transition-colors">
+                    <Link href={link.href} className="text-gray-400 hover:text-white transition-colors">
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -694,16 +701,11 @@ export default function Home() {
               <ul className="space-y-3">
                 {footerLinks.resources.map((link) => (
                   <li key={link.label}>
-                    <a href={link.href} className="text-gray-400 hover:text-white transition-colors">
+                    <Link href={link.href} className="text-gray-400 hover:text-white transition-colors">
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
-                <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                    採用情報
-                  </a>
-                </li>
               </ul>
             </div>
 
