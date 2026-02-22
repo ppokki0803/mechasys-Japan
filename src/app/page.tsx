@@ -511,6 +511,111 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Industries Section */}
+      <section id="industries" className="py-20 lg:py-32 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              導入業界
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              一つのツールで、無限の活用シーン。XR Projectorは様々な建設現場で活躍しています。
+            </p>
+          </AnimatedSection>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-100px' }}
+            variants={staggerContainer}
+            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
+            {[
+              { title: '間仕切り', desc: 'パーティションや間仕切り壁の配置を正確に投影' },
+              { title: '曲線・楕円', desc: '複雑な曲線形状も高精度にレイアウト' },
+              { title: '吸音天井', desc: '天井材の配置を効率的に投影' },
+              { title: '配管', desc: '配管ルートを視覚的に確認しながら施工' },
+              { title: '空調設備', desc: 'ダクトや空調機器の配置を正確に投影' },
+              { title: '電気設備', desc: 'コンセントや照明器具の位置決めを効率化' },
+            ].map((industry) => (
+              <motion.div key={industry.title} variants={fadeInUp}>
+                <Card className="h-full border-0 shadow-lg hover:shadow-xl bg-white transition-shadow overflow-hidden group">
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#0047bb] transition-colors">
+                      {industry.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      {industry.desc}
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </motion.div>
+          <AnimatedSection className="text-center mt-12">
+            <p className="text-gray-600 mb-4">
+              あなたの業務に当てはまるものが見つからない場合は、
+              <Link href="/contact" className="text-[#0047bb] font-medium hover:underline ml-1">
+                お問い合わせ
+              </Link>
+              ください。デモをご案内いたします。
+            </p>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Company Section */}
+      <section id="company" className="py-20 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              会社案内
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              卓越性とコラボレーションを基盤に、デジタルプランと物理的な現実のギャップを埋める
+            </p>
+          </AnimatedSection>
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+            <AnimatedSection>
+              <div className="space-y-8">
+                <div>
+                  <h3 className="text-xl font-bold text-[#0047bb] mb-2">明日の建設を創る</h3>
+                  <h4 className="text-2xl font-bold text-gray-900 mb-4">建設産業の変革</h4>
+                  <p className="text-gray-600 leading-relaxed">
+                    建設業界は大きな変革期にあります。ロボティクスと先進的なレイアウトソリューションは、現場の生産性向上に不可欠な要素となり、作業者に直接最適化されたソリューションを提供しています。
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-[#0047bb] mb-2">素晴らしいチームが素晴らしい製品を創る</h3>
+                  <h4 className="text-2xl font-bold text-gray-900 mb-4">私たちのチーム</h4>
+                  <p className="text-gray-600 leading-relaxed">
+                    Mechasysでは、XR Projectorの開発に取り組む優秀な人材を誇りに思っています。多様な専門分野、文化、背景を持つチームメンバーが、建設業界の最も複雑な課題に取り組むために、新たなレベルの創造性を解き放っています。
+                  </p>
+                </div>
+              </div>
+            </AnimatedSection>
+            <AnimatedSection>
+              <div className="space-y-8">
+                <div>
+                  <h3 className="text-xl font-bold text-[#0047bb] mb-2">すべての始まりの場所</h3>
+                  <h4 className="text-2xl font-bold text-gray-900 mb-4">モントリオール市</h4>
+                  <p className="text-gray-600 leading-relaxed">
+                    Mechasysはモントリオールに拠点を置いています。活気ある夏と雪に覆われた冬が文化を形成するこの街は、世界的に有名なベーグルから賑やかな芸術・映画シーンまで、ヨーロッパと北米の影響が融合した忘れられない場所です。
+                  </p>
+                </div>
+                <div className="p-6 bg-gray-50 rounded-2xl">
+                  <h4 className="text-lg font-bold text-gray-900 mb-4">会社概要</h4>
+                  <div className="space-y-3 text-gray-600">
+                    <p><span className="font-medium text-gray-900">会社名:</span> Mechasys (9373-6817 Québec inc.)</p>
+                    <p><span className="font-medium text-gray-900">所在地:</span> 160 Saint Viateur St. East, Suite 702, Montreal, Quebec, H2T 1A8, Canada</p>
+                    <p><span className="font-medium text-gray-900">事業内容:</span> 建設用レーザーレイアウト投影システムの開発・販売</p>
+                  </div>
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
       {/* YouTube Video Section */}
       <section className="py-20 lg:py-32">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
