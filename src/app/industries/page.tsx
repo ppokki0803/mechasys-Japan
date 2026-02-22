@@ -269,7 +269,7 @@ export default function IndustriesPage() {
                   複雑な建築デザインも、XR Projectorを使用することで高精度かつ効率的にレイアウト作業を完了。
                 </p>
                 <Link href="/contact" className="inline-flex items-center text-[#0047bb] font-medium hover:underline">
-                  詳しく見る <ArrowRight className="ml-2 h-4 w-4" />
+                  お問い合わせ <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </div>
             </motion.div>
@@ -295,7 +295,7 @@ export default function IndustriesPage() {
                   XR Projectorの導入により、大規模プロジェクトでも大幅な効率向上を実現。
                 </p>
                 <Link href="/contact" className="inline-flex items-center text-[#0047bb] font-medium hover:underline">
-                  詳しく見る <ArrowRight className="ml-2 h-4 w-4" />
+                  お問い合わせ <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </div>
             </motion.div>

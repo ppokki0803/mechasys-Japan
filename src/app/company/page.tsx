@@ -322,10 +322,10 @@ export default function CompanyPage() {
             </h2>
           </motion.div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            <img src="/images/company-team-picture.webp" alt="Team" className="w-full h-48 object-cover rounded-xl" />
-            <img src="/images/product-xr-projector.png" alt="Product" className="w-full h-48 object-contain rounded-xl bg-gray-50" />
-            <img src="/images/floor-layout.png" alt="Work" className="w-full h-48 object-cover rounded-xl" />
-            <img src="/images/track-install.png" alt="Installation" className="w-full h-48 object-cover rounded-xl" />
+            <img src="/images/team-action-1.jpg" alt="Team" className="w-full h-48 object-cover rounded-xl" />
+            <img src="/images/team-action-2.jpg" alt="Team" className="w-full h-48 object-cover rounded-xl" />
+            <img src="/images/team-action-3.jpg" alt="Team" className="w-full h-48 object-cover rounded-xl" />
+            <img src="/images/team-action-4.jpg" alt="Team" className="w-full h-48 object-cover rounded-xl" />
           </div>
         </div>
       </section>
