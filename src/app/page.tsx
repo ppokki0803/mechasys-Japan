@@ -297,14 +297,22 @@ export default function Home() {
 
       {/* Hero Section */}
       <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
+        {/* Background Video */}
         <div className="absolute inset-0">
-          <img 
-            src="/images/hero-bg.webp" 
-            alt="Construction site with XR Projector" 
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
             className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0047bb]/90 to-[#0047bb]/70" />
+            poster="/images/hero-bg.webp"
+          >
+            <source
+              src="https://vid.mechasys.ca/website/Mechasys%20-%20Site%20web_1080p.mp4"
+              type="video/mp4"
+            />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0047bb]/80 to-[#0047bb]/60" />
         </div>
 
         {/* Hero Content */}
