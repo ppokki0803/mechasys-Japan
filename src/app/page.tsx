@@ -42,12 +42,12 @@ const navItems = [
 
 // Partner logos
 const partners = [
-  'VINCI',
-  'Fujita',
-  'MG Construction',
-  'Haller Wasser',
-  'Kajima Corporation',
-  'ALEC',
+  { name: 'VINCI', logo: '/images/partner-vinci.webp' },
+  { name: 'Fujita', logo: '/images/partner-fujita.webp' },
+  { name: 'MG Construction', logo: '/images/partner-mg.webp' },
+  { name: 'Haller Wasser', logo: '/images/partner-haller.webp' },
+  { name: 'Kajima Corporation', logo: '/images/partner-kajima.webp' },
+  { name: 'ALEC', logo: '/images/partner-alec.webp' },
 ]
 
 // Features data
@@ -387,11 +387,15 @@ export default function Home() {
           >
             {partners.map((partner) => (
               <motion.div
-                key={partner}
+                key={partner.name}
                 variants={fadeIn}
-                className="flex items-center justify-center h-12 px-4"
+                className="flex items-center justify-center h-16 px-6"
               >
-                <span className="text-lg font-bold text-gray-400">{partner}</span>
+                <img 
+                  src={partner.logo} 
+                  alt={partner.name}
+                  className="h-10 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100"
+                />
               </motion.div>
             ))}
           </motion.div>
@@ -418,11 +422,11 @@ export default function Home() {
               </Button>
             </AnimatedSection>
             <AnimatedSection className="relative">
-              <div className="relative aspect-video rounded-2xl overflow-hidden bg-white shadow-2xl">
+              <div className="relative rounded-2xl overflow-hidden bg-white shadow-2xl">
                 <img 
                   src="/images/product-xr-projector.png" 
                   alt="XR Projector" 
-                  className="w-full h-full object-contain p-8"
+                  className="w-full h-auto max-h-[500px] object-contain p-4"
                 />
                 <div className="absolute inset-0 flex items-center justify-center bg-black/0 hover:bg-black/20 transition-colors cursor-pointer group">
                   <div className="w-16 h-16 bg-[#0047bb] rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
@@ -510,11 +514,11 @@ export default function Home() {
                     </p>
                   </div>
                   <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
-                    <div className="aspect-square rounded-2xl overflow-hidden shadow-xl">
+                    <div className="rounded-2xl overflow-hidden shadow-xl">
                       <img 
                         src={index === 0 ? '/images/floor-layout.png' : index === 1 ? '/images/track-install.png' : '/images/product-xr-projector.png'} 
                         alt={value.title}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                        className="w-full h-auto max-h-[400px] object-cover hover:scale-105 transition-transform duration-500"
                       />
                     </div>
                   </div>
