@@ -213,9 +213,11 @@ export default function Home() {
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
             <a href="#" className="flex items-center gap-2">
-              <span className={`text-2xl font-bold transition-colors ${isScrolled ? 'text-[#0047bb]' : 'text-white'}`}>
-                Mechasys
-              </span>
+              <img 
+                src="/images/logo-mechasys.png" 
+                alt="Mechasys" 
+                className={`h-8 w-auto transition-all ${isScrolled ? '' : 'brightness-0 invert'}`}
+              />
             </a>
 
             {/* Desktop Navigation */}
@@ -645,7 +647,11 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
             {/* Company Info */}
             <div>
-              <h4 className="text-2xl font-bold mb-6">Mechasys</h4>
+              <img 
+                src="/images/logo-mechasys.png" 
+                alt="Mechasys" 
+                className="h-10 w-auto mb-6 brightness-0 invert"
+              />
               <h5 className="font-semibold mb-4">お問い合わせ</h5>
               <ul className="space-y-3 text-gray-400">
                 <li className="flex items-center gap-2">
