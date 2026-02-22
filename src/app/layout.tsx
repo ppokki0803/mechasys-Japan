@@ -14,24 +14,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Z.ai Code Scaffold - AI-Powered Development",
-  description: "Modern Next.js scaffold optimized for AI-powered development with Z.ai. Built with TypeScript, Tailwind CSS, and shadcn/ui.",
-  keywords: ["Z.ai", "Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "AI development", "React"],
-  authors: [{ name: "Z.ai Team" }],
+  title: "Mechasys Japan - 建設現場の次世代レイアウト技術",
+  description: "XR Projectorで、デジタルレイアウトをミリ単位の精度で現場に。プロジェクション技術で建設現場の生産性を最大化します。",
+  keywords: ["Mechasys", "XR Projector", "建設", "レイアウト", "投影技術", "3Dスキャン", "建設技術"],
+  authors: [{ name: "Mechasys" }],
   icons: {
-    icon: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
+    icon: "/favicon.ico",
   },
   openGraph: {
-    title: "Z.ai Code Scaffold",
-    description: "AI-powered development with modern React stack",
-    url: "https://chat.z.ai",
-    siteName: "Z.ai",
+    title: "Mechasys Japan - 建設現場の次世代レイアウト技術",
+    description: "XR Projectorで、デジタルレイアウトをミリ単位の精度で現場に。",
+    url: "https://mechasys-japan.vercel.app",
+    siteName: "Mechasys Japan",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Z.ai Code Scaffold",
-    description: "AI-powered development with modern React stack",
+    title: "Mechasys Japan",
+    description: "建設現場の次世代レイアウト技術",
   },
 };
 
@@ -41,7 +41,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="ja" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >

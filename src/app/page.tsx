@@ -245,9 +245,6 @@ export default function Home() {
               >
                 ログイン
               </a>
-              <Button variant="outline" size="sm" className="rounded-full">
-                ディーラー募集
-              </Button>
               <Button size="sm" className="bg-[#0047bb] hover:bg-[#003399] rounded-full">
                 お問い合わせ
               </Button>
@@ -285,9 +282,6 @@ export default function Home() {
                 <a href="#login" className="block text-gray-700 hover:text-[#0047bb] font-medium">
                   ログイン
                 </a>
-                <Button variant="outline" size="sm" className="w-full rounded-full">
-                  ディーラー募集
-                </Button>
                 <Button size="sm" className="w-full bg-[#0047bb] hover:bg-[#003399] rounded-full">
                   お問い合わせ
                 </Button>
@@ -705,11 +699,6 @@ export default function Home() {
                     </a>
                   </li>
                 ))}
-                <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                    ディーラー募集
-                  </a>
-                </li>
                 <li>
                   <a href="#" className="text-gray-400 hover:text-white transition-colors">
                     採用情報
