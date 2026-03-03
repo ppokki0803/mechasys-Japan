@@ -22,22 +22,58 @@ import {
 } from 'lucide-react'
 import Link from 'next/link'
 
-// Animation variants
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
 }
+
+const employeeOptions = [
+  '24-25',
+  '26-50',
+  '51-100',
+  '101-200',
+  '201-500',
+  '501-1000',
+  '1001-5000',
+  '5000+',
+]
+
+const countryOptions = [
+  '日本',
+  'カナダ',
+  'アメリカ合衆国',
+  'オーストラリア',
+  'イギリス',
+  'フランス',
+  'ドイツ',
+  'イタリア',
+  'スペイン',
+  '韓国',
+  '中国',
+  'シンガポール',
+  'アラブ首長国連邦',
+  'ブラジル',
+  'メキシコ',
+  'インド',
+  'その他',
+]
 
 export default function ContactPage() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [agreed, setAgreed] = useState(false)
   const [formData, setFormData] = useState({
-    company: '',
-    name: '',
+    opName: '',
+    firstName: '',
+    lastName: '',
     email: '',
     phone: '',
-    message: '',
+    company: '',
+    website: '',
+    jobPosition: '',
+    employees: '',
+    country: '',
+    details: '',
   })
 
   useEffect(() => {
@@ -54,11 +90,29 @@ export default function ContactPage() {
     setIsSubmitted(true)
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     })
+  }
+
+  const resetForm = () => {
+    setIsSubmitted(false)
+    setFormData({
+      opName: '',
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      company: '',
+      website: '',
+      jobPosition: '',
+      employees: '',
+      country: '',
+      details: '',
+    })
+    setAgreed(false)
   }
 
   return (
@@ -72,9 +126,9 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
             <Link href="/" className="flex items-center gap-2">
-              <img 
-                src="/images/logo-mechasys.png" 
-                alt="Mechasys" 
+              <img
+                src="/images/logo-mechasys.png"
+                alt="Mechasys"
                 className={`h-8 w-auto transition-all ${isScrolled ? '' : 'brightness-0 invert'}`}
               />
             </Link>
@@ -95,13 +149,12 @@ export default function ContactPage() {
         </div>
       </nav>
 
-      {/* Hero Section with Image */}
+      {/* Hero Section */}
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
-        {/* Background Image */}
         <div className="absolute inset-0">
-          <img 
-            src="/images/contact-hero.png" 
-            alt="XR Projector in action" 
+          <img
+            src="/images/contact-hero.png"
+            alt="XR Projector in action"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-[#0047bb]/90 to-[#003399]/80" />
@@ -148,21 +201,7 @@ export default function ContactPage() {
                       <p className="text-gray-600 mb-6">
                         担当者より折り返しご連絡いたします。
                       </p>
-                      <Button
-                        onClick={() => {
-                          setIsSubmitted(false)
-                          setFormData({
-                            company: '',
-                            name: '',
-                            email: '',
-                            phone: '',
-                            message: '',
-                          })
-                          setAgreed(false)
-                        }}
-                        variant="outline"
-                        className="rounded-full"
-                      >
+                      <Button onClick={resetForm} variant="outline" className="rounded-full">
                         新しいお問い合わせ
                       </Button>
                     </div>
@@ -171,29 +210,48 @@ export default function ContactPage() {
                       <p className="text-gray-600 mb-6">
                         XR Projectorに関するご質問や、活用事例をご記入ください。
                       </p>
+
+                      {/* Op. Name */}
+                      <div className="space-y-2">
+                        <Label htmlFor="opName">担当者名 *</Label>
+                        <Input
+                          id="opName"
+                          name="opName"
+                          value={formData.opName}
+                          onChange={handleChange}
+                          required
+                          className="rounded-lg"
+                          placeholder="担当者のお名前"
+                        />
+                      </div>
+
+                      {/* First / Last Name */}
                       <div className="grid sm:grid-cols-2 gap-6">
                         <div className="space-y-2">
-                          <Label htmlFor="company">会社名</Label>
+                          <Label htmlFor="firstName">名 *</Label>
                           <Input
-                            id="company"
-                            name="company"
-                            value={formData.company}
+                            id="firstName"
+                            name="firstName"
+                            value={formData.firstName}
                             onChange={handleChange}
+                            required
                             className="rounded-lg"
                           />
                         </div>
                         <div className="space-y-2">
-                          <Label htmlFor="name">お名前 *</Label>
+                          <Label htmlFor="lastName">姓 *</Label>
                           <Input
-                            id="name"
-                            name="name"
-                            value={formData.name}
+                            id="lastName"
+                            name="lastName"
+                            value={formData.lastName}
                             onChange={handleChange}
                             required
                             className="rounded-lg"
                           />
                         </div>
                       </div>
+
+                      {/* Email / Phone */}
                       <div className="grid sm:grid-cols-2 gap-6">
                         <div className="space-y-2">
                           <Label htmlFor="email">メールアドレス *</Label>
@@ -219,20 +277,99 @@ export default function ContactPage() {
                           />
                         </div>
                       </div>
+
+                      {/* Company / Website */}
+                      <div className="grid sm:grid-cols-2 gap-6">
+                        <div className="space-y-2">
+                          <Label htmlFor="company">会社名 *</Label>
+                          <Input
+                            id="company"
+                            name="company"
+                            value={formData.company}
+                            onChange={handleChange}
+                            required
+                            className="rounded-lg"
+                          />
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="website">ウェブサイト *</Label>
+                          <Input
+                            id="website"
+                            name="website"
+                            type="url"
+                            value={formData.website}
+                            onChange={handleChange}
+                            required
+                            className="rounded-lg"
+                            placeholder="https://"
+                          />
+                        </div>
+                      </div>
+
+                      {/* Job Position */}
                       <div className="space-y-2">
-                        <Label htmlFor="message">メッセージ *</Label>
-                        <Textarea
-                          id="message"
-                          name="message"
-                          value={formData.message}
+                        <Label htmlFor="jobPosition">役職 *</Label>
+                        <Input
+                          id="jobPosition"
+                          name="jobPosition"
+                          value={formData.jobPosition}
                           onChange={handleChange}
                           required
+                          className="rounded-lg"
+                          placeholder="例: プロジェクトマネージャー"
+                        />
+                      </div>
+
+                      {/* Employees / Country */}
+                      <div className="grid sm:grid-cols-2 gap-6">
+                        <div className="space-y-2">
+                          <Label htmlFor="employees">従業員数 *</Label>
+                          <select
+                            id="employees"
+                            name="employees"
+                            value={formData.employees}
+                            onChange={handleChange}
+                            required
+                            className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm ring-offset-background focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                          >
+                            <option value="">選択してください</option>
+                            {employeeOptions.map((opt) => (
+                              <option key={opt} value={opt}>{opt}</option>
+                            ))}
+                          </select>
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="country">国 *</Label>
+                          <select
+                            id="country"
+                            name="country"
+                            value={formData.country}
+                            onChange={handleChange}
+                            required
+                            className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm ring-offset-background focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                          >
+                            <option value="">選択してください</option>
+                            {countryOptions.map((opt) => (
+                              <option key={opt} value={opt}>{opt}</option>
+                            ))}
+                          </select>
+                        </div>
+                      </div>
+
+                      {/* Details */}
+                      <div className="space-y-2">
+                        <Label htmlFor="details">詳細</Label>
+                        <Textarea
+                          id="details"
+                          name="details"
+                          value={formData.details}
+                          onChange={handleChange}
                           rows={6}
                           className="rounded-lg"
                           placeholder="XR Projectorに関するご質問や、活用予定をご記入ください。"
                         />
                       </div>
-                      
+
                       {/* Privacy Notice */}
                       <div className="text-sm text-gray-500 bg-gray-50 p-4 rounded-lg">
                         <p>
@@ -246,9 +383,9 @@ export default function ContactPage() {
 
                       {/* Agreement Checkbox */}
                       <div className="flex items-start gap-3">
-                        <Checkbox 
-                          id="agreed" 
-                          checked={agreed} 
+                        <Checkbox
+                          id="agreed"
+                          checked={agreed}
                           onCheckedChange={(checked) => setAgreed(checked as boolean)}
                         />
                         <Label htmlFor="agreed" className="text-sm text-gray-600 cursor-pointer">
@@ -278,18 +415,11 @@ export default function ContactPage() {
               viewport={{ once: true }}
               variants={fadeInUp}
             >
-              <h2 className="text-2xl font-bold text-gray-900 mb-8">
-                連絡先情報
-              </h2>
-              
-              {/* Company Info */}
+              <h2 className="text-2xl font-bold text-gray-900 mb-8">連絡先情報</h2>
+
               <div className="p-6 bg-gray-50 rounded-2xl mb-6">
                 <div className="flex items-center gap-4 mb-6">
-                  <img 
-                    src="/images/logo-mechasys.png" 
-                    alt="Mechasys" 
-                    className="h-10 w-auto"
-                  />
+                  <img src="/images/logo-mechasys.png" alt="Mechasys" className="h-10 w-auto" />
                 </div>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
@@ -320,7 +450,6 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Social Media */}
               <div className="p-6 bg-gray-50 rounded-2xl mb-6">
                 <h3 className="text-lg font-bold text-gray-900 mb-4">ソーシャルメディア</h3>
                 <div className="flex items-center gap-4">
@@ -336,15 +465,12 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Watch Video */}
               <div className="p-6 bg-[#0047bb] rounded-2xl text-white">
                 <h3 className="text-lg font-bold mb-4">XR Projectorのデモを見る</h3>
-                <p className="text-white/80 mb-6">
-                  実際の現場でどのように動作するかをご覧ください
-                </p>
-                <a 
-                  href="https://www.youtube.com/watch?v=k3x6cFLr0T8" 
-                  target="_blank" 
+                <p className="text-white/80 mb-6">実際の現場でどのように動作するかをご覧ください</p>
+                <a
+                  href="https://www.youtube.com/watch?v=k3x6cFLr0T8"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 bg-white text-[#0047bb] px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors"
                 >
@@ -369,11 +495,7 @@ export default function ContactPage() {
                   <Phone className="h-4 w-4" />
                   +1 (844) 401-6461
                 </li>
-                <li>
-                  160 Saint Viateur St. East<br />
-                  Suite 702, Montreal, Quebec<br />
-                  H2T 1A8
-                </li>
+                <li>160 Saint Viateur St. East<br />Suite 702, Montreal, Quebec<br />H2T 1A8</li>
               </ul>
             </div>
             <div>
