@@ -81,21 +81,21 @@ const coreValues = [
     title: 'シンプルさ',
     subtitle: '日常業務をより簡単に',
     description: 'XR Projectorは現場のレイアウト作業を大幅に簡素化し、人材管理を容易にします。わずか3時間のトレーニングで完全に操作できるようになり、オンラインプログラムで他のスタッフもトレーニング可能です。',
-    image: '/images/value-simplicity.png',
+    image: '/images/floor-layout.png',
   },
   {
     icon: Settings,
     title: '汎用性',
     subtitle: 'あらゆる作業に対応',
     description: '複数の表面に投影でき、機器を簡単に持ち運べるため、XR Projectorはあらゆるタイプの作業に対応する汎用的なツールです。',
-    image: '/images/value-versatility.png',
+    image: '/images/track-install.png',
   },
   {
     icon: Trophy,
     title: '卓越性',
     subtitle: '自信を持って建設',
     description: '最も精密なツールを使用することで、作業員は完全な自信を持って建設できます。すべての材料が正確に配置され、他の業者との競合を簡単に検出できます。',
-    image: '/images/value-excellence.png',
+    image: '/images/value-excellence.webp',
   },
 ]
 
@@ -497,8 +497,8 @@ export default function Home() {
                   </div>
                   <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
                     <div className="rounded-2xl overflow-hidden shadow-xl">
-                      <img 
-                        src={index === 0 ? '/images/floor-layout.png' : index === 1 ? '/images/track-install.png' : '/images/product-xr-projector.png'} 
+                      <img
+                        src={value.image}
                         alt={value.title}
                         className="w-full h-auto max-h-[400px] object-cover hover:scale-105 transition-transform duration-500"
                       />
@@ -511,30 +511,42 @@ export default function Home() {
         </div>
       </section>
 
-      {/* YouTube Video Section */}
-      <section className="py-20 lg:py-32">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* See XR Projector at Work Section */}
+      <section className="py-20 lg:py-32 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              XR Projectorのデモビデオ
+              XR Projectorの実際の動作
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              実際の現場でどのように動作するかをご覧ください
+              あらゆる現場で、フルスケールのレイアウトをリアルに投影
             </p>
           </AnimatedSection>
-          <AnimatedSection>
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gray-900">
-              <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full"
-                  src="https://www.youtube.com/embed/k3x6cFLr0T8"
-                  title="XR Projector Demo"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-100px' }}
+            variants={staggerContainer}
+            className="grid md:grid-cols-3 gap-6"
+          >
+            {[
+              { src: '/images/track-install.png', alt: 'トラック設置レイアウト' },
+              { src: '/images/case-study-1.webp', alt: '現場レイアウト事例' },
+              { src: '/images/floor-layout.png', alt: '床面レイアウト投影' },
+            ].map((img) => (
+              <motion.div
+                key={img.src}
+                variants={fadeInUp}
+                className="rounded-2xl overflow-hidden shadow-lg"
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500"
                 />
-              </div>
-            </div>
-          </AnimatedSection>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
