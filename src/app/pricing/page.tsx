@@ -14,10 +14,6 @@ import {
   Linkedin,
   Twitter,
   Youtube,
-  Projector,
-  Triangle,
-  Tablet,
-  Package,
 } from 'lucide-react'
 import Link from 'next/link'
 
@@ -53,26 +49,22 @@ const boxItems = [
   {
     name: 'XR Projector',
     description: 'Class 3R認証レーザー搭載。ミリ単位の精度で現場にデジタルレイアウトを投影します。',
-    image: '/images/product-xr-projector.png',
-    icon: Projector,
+    image: 'https://mechasys.ca/web/image/22776-b8957ca5/WhatsInTheBox-XRProjector.png',
   },
   {
     name: '軽量三脚',
     description: '現場での安定した設置を実現する頑丈な軽量三脚。持ち運びも簡単です。',
-    image: null,
-    icon: Triangle,
+    image: 'https://mechasys.ca/web/image/22772-cf153c3c/WhatsInTheBox-Tripod.png',
   },
   {
     name: '堅牢タブレット',
     description: 'Layout Fieldアプリで直感的に操作。過酷な現場環境にも対応した堅牢設計です。',
-    image: null,
-    icon: Tablet,
+    image: 'https://mechasys.ca/web/image/22775-56b4ce2e/LayoutFieldApp_FrontBack-ScreenCapture_Mechasys.png',
   },
   {
     name: 'ハードケース',
     description: 'すべての構成品を安全に収納・保護する専用ハードケース。移動もスムーズです。',
-    image: null,
-    icon: Package,
+    image: 'https://mechasys.ca/web/image/22774-3f82e27c/WhatsInTheBox-Hardcase.png',
   },
 ]
 
@@ -257,15 +249,11 @@ export default function PricingPage() {
                 className="text-center"
               >
                 <div className="w-full aspect-square bg-gray-100 rounded-2xl mb-6 flex items-center justify-center overflow-hidden">
-                  {item.image ? (
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <item.icon className="h-16 w-16 text-[#0047bb]/40" />
-                  )}
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-full h-full object-contain p-4"
+                  />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{item.name}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
