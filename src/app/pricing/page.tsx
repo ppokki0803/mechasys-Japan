@@ -11,11 +11,13 @@ import {
   Cloud,
   HeadphonesIcon,
   Phone,
-  Mail,
-  MapPin,
   Linkedin,
   Twitter,
   Youtube,
+  Projector,
+  Triangle,
+  Tablet,
+  Package,
 } from 'lucide-react'
 import Link from 'next/link'
 
@@ -51,22 +53,26 @@ const boxItems = [
   {
     name: 'XR Projector',
     description: 'Class 3R認証レーザー搭載。ミリ単位の精度で現場にデジタルレイアウトを投影します。',
-    image: '/images/box-projector.png',
+    image: '/images/product-xr-projector.png',
+    icon: Projector,
   },
   {
     name: '軽量三脚',
     description: '現場での安定した設置を実現する頑丈な軽量三脚。持ち運びも簡単です。',
-    image: '/images/box-tripod.png',
+    image: null,
+    icon: Triangle,
   },
   {
     name: '堅牢タブレット',
     description: 'Layout Fieldアプリで直感的に操作。過酷な現場環境にも対応した堅牢設計です。',
-    image: '/images/box-tablet.png',
+    image: null,
+    icon: Tablet,
   },
   {
     name: 'ハードケース',
     description: 'すべての構成品を安全に収納・保護する専用ハードケース。移動もスムーズです。',
-    image: '/images/box-case.png',
+    image: null,
+    icon: Package,
   },
 ]
 
@@ -148,13 +154,9 @@ export default function PricingPage() {
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/images/pricing-hero.png"
+            src="/images/hero-bg.webp"
             alt="XR Projector"
             className="w-full h-full object-cover"
-            onError={(e) => {
-              const target = e.target as HTMLImageElement
-              target.style.display = 'none'
-            }}
           />
           <div className="absolute inset-0 bg-gradient-to-br from-[#0047bb]/90 to-[#003399]/80" />
         </div>
@@ -255,15 +257,15 @@ export default function PricingPage() {
                 className="text-center"
               >
                 <div className="w-full aspect-square bg-gray-100 rounded-2xl mb-6 flex items-center justify-center overflow-hidden">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement
-                      target.style.display = 'none'
-                    }}
-                  />
+                  {item.image ? (
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <item.icon className="h-16 w-16 text-[#0047bb]/40" />
+                  )}
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{item.name}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
