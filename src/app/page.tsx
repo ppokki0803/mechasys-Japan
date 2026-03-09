@@ -37,6 +37,7 @@ const navItems = [
   { label: '製品紹介', href: '/product' },
   { label: '業界', href: '/industries' },
   { label: '会社案内', href: '/company' },
+  { label: '価格', href: '/pricing' },
   { label: 'お問い合わせ', href: '/contact' },
 ]
 
@@ -128,6 +129,7 @@ const footerLinks = {
   company: [
     { label: 'ホーム', href: '/' },
     { label: '製品', href: '/product' },
+    { label: '価格', href: '/pricing' },
   ],
   resources: [
     { label: 'お問い合わせ', href: '/contact' },

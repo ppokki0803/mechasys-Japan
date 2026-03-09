@@ -136,6 +136,7 @@ export default function ContactPage() {
               <Link href="/product" className={`text-sm font-medium transition-colors ${isScrolled ? 'text-gray-700 hover:text-[#0047bb]' : 'text-white/90 hover:text-white'}`}>製品紹介</Link>
               <Link href="/industries" className={`text-sm font-medium transition-colors ${isScrolled ? 'text-gray-700 hover:text-[#0047bb]' : 'text-white/90 hover:text-white'}`}>業界</Link>
               <Link href="/company" className={`text-sm font-medium transition-colors ${isScrolled ? 'text-gray-700 hover:text-[#0047bb]' : 'text-white/90 hover:text-white'}`}>会社案内</Link>
+              <Link href="/pricing" className={`text-sm font-medium transition-colors ${isScrolled ? 'text-gray-700 hover:text-[#0047bb]' : 'text-white/90 hover:text-white'}`}>価格</Link>
               <Link href="/contact" className="text-sm font-medium text-[#0047bb]">お問い合わせ</Link>
             </div>
             <div className="hidden lg:flex items-center gap-4">
