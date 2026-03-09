@@ -123,20 +123,11 @@ export default function ProductPage() {
               />
             </Link>
             <div className="hidden lg:flex items-center gap-8">
-              <Link
-                href="/product"
-                className="text-sm font-medium text-[#0047bb]"
-              >
-                製品
-              </Link>
-              <a
-                href="/contact"
-                className={`text-sm font-medium transition-colors ${
-                  isScrolled ? 'text-gray-700 hover:text-[#0047bb]' : 'text-white/90 hover:text-white'
-                }`}
-              >
-                お問い合わせ
-              </a>
+              <Link href="/product" className="text-sm font-medium text-[#0047bb]">製品紹介</Link>
+              <Link href="/industries" className={`text-sm font-medium transition-colors ${isScrolled ? 'text-gray-700 hover:text-[#0047bb]' : 'text-white/90 hover:text-white'}`}>業界</Link>
+              <Link href="/company" className={`text-sm font-medium transition-colors ${isScrolled ? 'text-gray-700 hover:text-[#0047bb]' : 'text-white/90 hover:text-white'}`}>会社案内</Link>
+              <Link href="/pricing" className={`text-sm font-medium transition-colors ${isScrolled ? 'text-gray-700 hover:text-[#0047bb]' : 'text-white/90 hover:text-white'}`}>価格</Link>
+              <Link href="/contact" className={`text-sm font-medium transition-colors ${isScrolled ? 'text-gray-700 hover:text-[#0047bb]' : 'text-white/90 hover:text-white'}`}>お問い合わせ</Link>
             </div>
             <div className="hidden lg:flex items-center gap-4">
               <Button size="sm" className="bg-[#0047bb] hover:bg-[#003399] rounded-full">
