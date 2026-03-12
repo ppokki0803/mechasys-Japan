@@ -113,12 +113,12 @@ const testimonials = [
     role: 'MG Construction CEO',
   },
   {
-    quote: 'XR Projectorはレイアウト時間を半分に削減するだけでなく、品質管理も向上させ、より早く効果的な自己監視を可能にします。そのシンプルさにより、建設業者を内部で再配分し、下請けへの依存を減らすことができます。',
+    quote: 'XR Projectorはレイアウト時間を半分に削減するだけでなく、品質管理も向上させ、より早く効果的な自己監視を可能にします。そのシンプルさにより、自社の作業員を社内で再配置し、下請けへの依存を減らすことができます。',
     author: 'Samy Merry',
     role: 'VINCI Construction イノベーションマネージャー',
   },
   {
-    quote: 'フジタはXR Projectorの開発に参加できたことを誇りに思います。この革新は、プロジェクトの納期を大幅に簡素化し、加速させます。',
+    quote: 'フジタはXR Projectorの開発に参加できたことを誇りに思います。この革新は、プロジェクトの工程を大幅に簡素化し、進行を加速させます。',
     author: 'Fujita DaiwaHouse Group',
     role: '',
   },

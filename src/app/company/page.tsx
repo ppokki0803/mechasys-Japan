@@ -103,7 +103,7 @@ export default function CompanyPage() {
               variants={fadeInUp}
             >
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
-                Life at Mechasys
+                Mechasysでの毎日
               </h1>
               <p className="text-xl text-white/90 mb-8">
                 優れた製品は、優れたチームによって生み出されます
@@ -154,7 +154,7 @@ export default function CompanyPage() {
               viewport={{ once: true }}
               variants={fadeInUp}
             >
-              <p className="text-sm font-bold text-[#0047bb] mb-2">THE BUILDERS OF TOMORROW</p>
+              <p className="text-sm font-bold text-[#0047bb] mb-2">未来を創る者たち</p>
               <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
                 建設産業の変革
               </h2>
@@ -186,7 +186,7 @@ export default function CompanyPage() {
               variants={fadeInUp}
               className="lg:order-1"
             >
-              <p className="text-sm font-bold text-[#0047bb] mb-2">GREAT MINDS BUILD AWESOMENESS</p>
+              <p className="text-sm font-bold text-[#0047bb] mb-2">優れた人材が素晴らしいものを創る</p>
               <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
                 私たちのチーム
               </h2>
@@ -216,7 +216,7 @@ export default function CompanyPage() {
               viewport={{ once: true }}
               variants={fadeInUp}
             >
-              <p className="text-sm font-bold text-[#0047bb] mb-2">WHERE IT ALL STARTED</p>
+              <p className="text-sm font-bold text-[#0047bb] mb-2">すべてが始まった場所</p>
               <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
                 モントリオール市
               </h2>
