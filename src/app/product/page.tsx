@@ -337,7 +337,7 @@ export default function ProductPage() {
           </div>
           <div className="pt-8 border-t border-gray-800 text-center">
             <p className="text-gray-400 text-sm">
-              著作権 ©2025 Mechasys
+              著作権 ©2025-2026 Mechasys
             </p>
           </div>
         </div>
