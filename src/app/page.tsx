@@ -609,6 +609,32 @@ export default function Home() {
         </div>
       </section>
 
+      {/* YouTube Video Section */}
+      <section className="py-20 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              XR Projectorを動画で見る
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              実際の現場でXR Projectorがどのように活用されているかをご覧ください。
+            </p>
+          </AnimatedSection>
+          <AnimatedSection>
+            <div className="max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden shadow-xl">
+              <iframe
+                src="https://iframe.mediadelivery.net/embed/390136/f7189520-8b4d-4bd1-9c6e-5899f464aa2d?autoplay=false&loop=false&muted=false&preload=false&responsive=true"
+                title="Mechasys XR Projector"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+                style={{ border: 'none' }}
+              />
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 lg:py-32 bg-[#0047bb] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
