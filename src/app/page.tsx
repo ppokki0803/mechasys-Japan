@@ -96,7 +96,7 @@ const coreValues = [
     title: '卓越性',
     subtitle: '自信を持って建設',
     description: '最も精密なツールを使用することで、作業員は完全な自信を持って建設できます。すべての材料が正確に配置され、他の業者との競合を簡単に検出できます。',
-    image: '/images/value-excellence.webp',
+    image: '/images/company-construction.webp',
   },
 ]
 
@@ -605,6 +605,31 @@ export default function Home() {
               <CarouselPrevious className="hidden md:flex -left-12" />
               <CarouselNext className="hidden md:flex -right-12" />
             </Carousel>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* YouTube Video Section */}
+      <section className="py-20 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              XR Projectorを動画で見る
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              実際の現場でXR Projectorがどのように活用されているかをご覧ください。
+            </p>
+          </AnimatedSection>
+          <AnimatedSection>
+            <div className="max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden shadow-xl">
+              <iframe
+                src="https://www.youtube.com/embed/k3x6cFLr0T8"
+                title="Mechasys XR Projector"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              />
+            </div>
           </AnimatedSection>
         </div>
       </section>
