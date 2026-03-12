@@ -292,7 +292,7 @@ export default function Home() {
               type="video/mp4"
             />
           </video>
-          <div className="absolute inset-0 bg-[#0047bb]/40" />
+          <div className="absolute inset-0 bg-black/40" />
         </div>
 
         {/* Hero Content */}
