@@ -351,7 +351,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              設定で5分RPから開始（点）へ。
+              直感でBIMから現場（実）へ。
             </h2>
             <p className="text-lg text-white/80 max-w-2xl mx-auto">
               わずか3ステップで、CADデータを現場にフルスケール投影
@@ -377,6 +377,26 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== Photo Grid ===== */}
+      <section className="py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection>
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { src: '/images/team-action-1.jpg', alt: '現場施工1' },
+                { src: '/images/team-action-2.jpg', alt: '現場施工2' },
+                { src: '/images/team-action-3.jpg', alt: '現場施工3' },
+                { src: '/images/team-action-4.jpg', alt: '現場施工4' },
+              ].map((img) => (
+                <div key={img.src} className="rounded-2xl overflow-hidden shadow-lg">
+                  <img src={img.src} alt={img.alt} className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500" />
+                </div>
+              ))}
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
       {/* ===== Product Features with Images ===== */}
       <section id="industries" className="py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -399,12 +419,28 @@ export default function Home() {
           </div>
 
           <AnimatedSection className="text-center mt-16">
-            <a href="#product" onClick={(e) => scrollToSection(e, '#product')}>
-              <Button size="lg" variant="outline" className="rounded-full px-8 border-[#0047bb] text-[#0047bb] hover:bg-[#0047bb] hover:text-white">
-                XR製品の全体を見る
-                <ExternalLink className="ml-2 h-4 w-4" />
-              </Button>
-            </a>
+            <Button size="lg" variant="outline" className="rounded-full px-8 border-[#0047bb] text-[#0047bb] hover:bg-[#0047bb] hover:text-white" onClick={() => { const el = document.getElementById('demo-video'); if (el) el.scrollIntoView({ behavior: 'smooth' }) }}>
+              デモ動画の全編を見る
+              <Play className="ml-2 h-4 w-4" />
+            </Button>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ===== Demo Video Section ===== */}
+      <section id="demo-video" className="py-20 lg:py-32 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection>
+            <div className="max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden shadow-xl">
+              <iframe
+                src="https://iframe.mediadelivery.net/embed/390136/f7189520-8b4d-4bd1-9c6e-5899f464aa2d?autoplay=false&loop=false&muted=false&preload=false&responsive=true"
+                title="Mechasys XR Projector Demo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+                style={{ border: 'none' }}
+              />
+            </div>
           </AnimatedSection>
         </div>
       </section>
@@ -448,6 +484,24 @@ export default function Home() {
               </motion.div>
             ))}
           </motion.div>
+
+          {/* Partner Logos */}
+          <AnimatedSection className="mt-16">
+            <div className="flex flex-wrap items-center justify-center gap-8">
+              {[
+                { name: 'VINCI', logo: '/images/partner-vinci.webp' },
+                { name: 'Fujita', logo: '/images/partner-fujita.webp' },
+                { name: 'MG Construction', logo: '/images/partner-mg.webp' },
+                { name: 'Haller Wasser', logo: '/images/partner-haller.webp' },
+                { name: 'Kajima', logo: '/images/partner-kajima.webp' },
+                { name: 'ALEC', logo: '/images/partner-alec.webp' },
+              ].map((partner) => (
+                <div key={partner.name} className="flex items-center justify-center h-16 px-4">
+                  <img src={partner.logo} alt={partner.name} className="h-10 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100" />
+                </div>
+              ))}
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
